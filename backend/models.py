@@ -38,7 +38,7 @@ class Note(models.Model):
         return self.title
 
 
-class Video_Lecture(models.Model):
+class VideoLecture(models.Model):
     subject = models.ForeignKey(
         Subject, on_delete=models.SET_NULL, null=True, blank=True)
     link = models.CharField(max_length=1000)

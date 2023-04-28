@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 # from django.http import HttpResponse
 # from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import Subject, Note, Video_Lecture, Book, SamplePaper
+from .models import Subject, Note, VideoLecture, Book, SamplePaper
 from django.db.models import Q
 from .contextProcessor import *
 
@@ -80,7 +80,7 @@ def video_lectures_table(request):
 
 
 def video_lectures(request, id, *args, **kwargs):
-    data = Video_Lecture.objects.filter(subject=id)
+    data = VideoLecture.objects.filter(subject=id)
     subject = Subject.objects.get(id=id)
     return render(request, "pages/video_lectures.html", context={'data': data, 'subject': subject})
 
