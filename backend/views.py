@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 # from django.http import HttpResponse
 # from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import Subject, Note, Video_Lecture, Book
+from .models import Subject, Note, Video_Lecture, Book, SamplePaper
 from django.db.models import Q
 from .contextProcessor import *
 
@@ -99,8 +99,13 @@ def course_books(request, id, *args, **kwargs):
 
 
 def sample_papers_table(request):
-    return render(request, "pages/sample_papers_table.html",)
+    title = "Sample Paper"
+    context = getSubjectTableData()
+    context['title'] = (title)
+    return render(request, "pages/sample_papers_table.html", context)
 
 
-def sample_papers(request):
-    return render(request, "pages/sample_papers.html")
+def sample_papers(request, id, *args, **kwargs):
+    data = SamplePaper.objects.filter(subject=id)
+    subject = Subject.objects.get(id=id)
+    return render(request, "pages/sample_papers.html", context={'data': data, 'subject': subject})

@@ -31,7 +31,7 @@
                     {% for data in first_year %}
                         <tr>
                             {% if data.0 is not None %}
-                                <td onclick="window.location.href='{% url 'notes' data.0.subject data.0.id %}'">
+                                <td onclick="window.location.href='{% url "notes" data.0.subject data.0.id %}'">
                                     {{ data.0.subject_code }}-{{ data.0.subject }}
                                 </td>
                             {% endif %}

@@ -64,3 +64,18 @@ class Book(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+class SamplePaper(models.Model):
+    subject = models.ForeignKey(
+        Subject, on_delete=models.SET_NULL, null=True, blank=True)
+    title = models.CharField(max_length=500)
+    paper_file = models.FileField(
+        upload_to="Sample_Papers/")
+    created = models.DateField(auto_now_add=True, editable=False)
+    contributer = models.CharField(max_length=300, null=True, blank=True)
+    id = models.UUIDField(default=uuid.uuid4, unique=True,
+                          primary_key=True, editable=False)
+
+    def __str__(self) -> str:
+        return self.title

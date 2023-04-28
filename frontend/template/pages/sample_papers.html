@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-    C-Programming Sample Papers
+    {{ subject.subject }}
 {% endblock title %}
 {% block container %}
     <link rel="stylesheet" href="{% static 'css/C-Programming_Notes.css' %}">
@@ -12,126 +12,19 @@
         <div class="container-fluid files-container">
             <h2 class="body-text">CC12 - Programming Fundamentals using C~</h2>
             <div class="row">
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/paper.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample.pdf</h5>
+                {% for x in data %}
+                    <div class="col-lg-2 col-md-3 col-sm-4 file">
+                        <div class="card" onclick="window.location.href='{{ x.paper_file.url }}'">
+                            <img src="{% static 'image/paper.png' %}"
+                                 class="card-img-top card-image"
+                                 alt="pdf">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ x.title }}</h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/paper.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample.pdf</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/paper.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample.pdf</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/paper.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample.pdf</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/paper.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample.pdf</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/paper.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample.pdf</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/paper.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample.pdf</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/paper.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample.pdf</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/paper.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample.pdf</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/paper.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample.pdf</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/paper.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample.pdf</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/paper.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Sample.pdf</h5>
-                        </div>
-                    </div>
-                </div>
-                {% comment %} Footer {% endcomment %}
-                {% include 'footer.html' %}
-            {% endblock container %}
+                {% endfor %}
+            </div>
+            {% comment %} Footer {% endcomment %}
+            {% include 'footer.html' %}
+        {% endblock container %}
