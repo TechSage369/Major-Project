@@ -4,7 +4,7 @@ import uuid
 
 
 class Subject(models.Model):
-    SEMISTER_CHOICE = [
+    SEMESTER_CHOICE = [
         (1, 'I'),
         (2, 'II'),
         (3, 'III'),
@@ -12,8 +12,8 @@ class Subject(models.Model):
         (5, 'V'),
         (6, 'VI'),
     ]
-    semister = models.IntegerField(
-        choices=SEMISTER_CHOICE)
+    semester = models.IntegerField(
+        choices=SEMESTER_CHOICE)
     subject = models.CharField(max_length=200)
     subject_code = models.CharField(max_length=50, null=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
@@ -30,6 +30,7 @@ class Note(models.Model):
     notes_file = models.FileField(
         upload_to="Notes/")
     created = models.DateField(auto_now_add=True, editable=False)
+    contributer = models.CharField(max_length=300)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
 
@@ -42,6 +43,7 @@ class Video_Lecture(models.Model):
         Subject, on_delete=models.SET_NULL, null=True, blank=True)
     link = models.CharField(max_length=1000)
     created = models.DateField(auto_now_add=True, editable=False)
+    contributer = models.CharField(max_length=300)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
 

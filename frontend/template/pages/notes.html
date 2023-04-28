@@ -10,13 +10,23 @@
     </section>
     <section class="files">
         <div class="container-fluid files-container">
-            <h2 class="body-text">CC12 - Programming Fundamentals using C~</h2>
+            <h2 class="body-text">{{ subject.subject_code }}-{{ subject.subject }}</h2>
             <div class="row">
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
+                {% for file in data %}
+                    <div class="col-lg-2 col-md-3 col-sm-4 file">
+                        <div class="card" onclick="window.location.href='{{ file.notes_file.url }}'">
+                            <img src="{% static 'image/pdf.png' %}"
+                                 class="card-img-top card-image"
+                                 alt="pdf">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ file.title }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% comment %} <div class="col-lg-2 col-md-3 col-sm-4 file">
                     <div class="card">
-                        <img src="{% static 'image/pdf.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
+                        <img src="{% static 'image/pdf.png' %}" class="card-img-top card-image" alt="pdf">
                         <div class="card-body">
                             <h5 class="card-title">Introduction.pdf</h5>
                         </div>
@@ -24,9 +34,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 file">
                     <div class="card">
-                        <img src="{% static 'image/pdf.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
+                        <img src="{% static 'image/pdf.png' %}" class="card-img-top card-image" alt="pdf">
                         <div class="card-body">
                             <h5 class="card-title">Introduction.pdf</h5>
                         </div>
@@ -34,9 +42,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 file">
                     <div class="card">
-                        <img src="{% static 'image/pdf.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
+                        <img src="{% static 'image/pdf.png' %}" class="card-img-top card-image" alt="pdf">
                         <div class="card-body">
                             <h5 class="card-title">Introduction.pdf</h5>
                         </div>
@@ -44,9 +50,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 file">
                     <div class="card">
-                        <img src="{% static 'image/pdf.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
+                        <img src="{% static 'image/pdf.png' %}" class="card-img-top card-image" alt="pdf">
                         <div class="card-body">
                             <h5 class="card-title">Introduction.pdf</h5>
                         </div>
@@ -54,9 +58,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 file">
                     <div class="card">
-                        <img src="{% static 'image/pdf.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
+                        <img src="{% static 'image/pdf.png' %}" class="card-img-top card-image" alt="pdf">
                         <div class="card-body">
                             <h5 class="card-title">Introduction.pdf</h5>
                         </div>
@@ -64,9 +66,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 file">
                     <div class="card">
-                        <img src="{% static 'image/pdf.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
+                        <img src="{% static 'image/pdf.png' %}" class="card-img-top card-image" alt="pdf">
                         <div class="card-body">
                             <h5 class="card-title">Introduction.pdf</h5>
                         </div>
@@ -74,9 +74,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 file">
                     <div class="card">
-                        <img src="{% static 'image/pdf.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
+                        <img src="{% static 'image/pdf.png' %}" class="card-img-top card-image" alt="pdf">
                         <div class="card-body">
                             <h5 class="card-title">Introduction.pdf</h5>
                         </div>
@@ -84,9 +82,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 file">
                     <div class="card">
-                        <img src="{% static 'image/pdf.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
+                        <img src="{% static 'image/pdf.png' %}" class="card-img-top card-image" alt="pdf">
                         <div class="card-body">
                             <h5 class="card-title">Introduction.pdf</h5>
                         </div>
@@ -94,9 +90,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 file">
                     <div class="card">
-                        <img src="{% static 'image/pdf.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
+                        <img src="{% static 'image/pdf.png' %}" class="card-img-top card-image" alt="pdf">
                         <div class="card-body">
                             <h5 class="card-title">Introduction.pdf</h5>
                         </div>
@@ -104,9 +98,7 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 file">
                     <div class="card">
-                        <img src="{% static 'image/pdf.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
+                        <img src="{% static 'image/pdf.png' %}" class="card-img-top card-image" alt="pdf">
                         <div class="card-body">
                             <h5 class="card-title">Introduction.pdf</h5>
                         </div>
@@ -114,24 +106,12 @@
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-4 file">
                     <div class="card">
-                        <img src="{% static 'image/pdf.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
+                        <img src="{% static 'image/pdf.png' %}" class="card-img-top card-image" alt="pdf">
                         <div class="card-body">
                             <h5 class="card-title">Introduction.pdf</h5>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 file">
-                    <div class="card">
-                        <img src="{% static 'image/pdf.png' %}"
-                             class="card-img-top card-image"
-                             alt="pdf">
-                        <div class="card-body">
-                            <h5 class="card-title">Introduction.pdf</h5>
-                        </div>
-                    </div>
-                </div>
-                {% comment %} Footer {% endcomment %}
-                {% include 'footer.html' %}
-            {% endblock container %}
+                </div> {% endcomment %}
+            </div>
+            {% include 'footer.html' %}
+        {% endblock container %}

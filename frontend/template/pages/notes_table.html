@@ -28,36 +28,17 @@
                             </th>
                         </tr>
                     </thead>
-                    {% comment %} <tr>
-                        <td onclick="window.location.href='{% url "notes" %}'">CC12 - Programming Fundamentals using C</td>
-                        <td>Programming in JAVA</td>
-                    </tr>
-                    <tr>
-                        <td>CC12L - Programming Fundamentals using C Lab</td>
-                        <td>Programming in JAVA Lab</td>
-                    </tr>
-                    <tr>
-                        <td>CC13 - Computer System Architecture</td>
-                        <td>Discrete Structures</td>
-                    </tr>
-                    <tr>
-                        <td>CC13L - Computer System Architecture Lab</td>
-                        <td>Discrete Structures Tutorial</td>
-                    </tr>
-                    <tr>
-                        <td>AEC11 - Environmental Science</td>
-                        <td>Generic Elective II</td>
-                    </tr>
-                    <tr>
-                        <td>GE14 - Mathematics</td>
-                        <td>Generic Elective II</td>
-                    </tr> {% endcomment %}
                     {% for data in first_year %}
                         <tr>
-                            {% if data.semister == 1 %}
-                                <td>{{ data.subject }}</td>
-                            {% else %}
-                                <td>{{ data.subject }}</td>
+                            {% if data.0 is not None %}
+                                <td onclick="window.location.href='{% url 'notes' data.0.subject data.0.id %}'">
+                                    {{ data.0.subject_code }}-{{ data.0.subject }}
+                                </td>
+                            {% endif %}
+                            {% if data.1 is not None  %}
+                                <td onclick="window.location.href='{% url "notes" data.1.subject data.1.id %}'">
+                                    {{ data.1.subject_code }}-{{ data.1.subject }}
+                                </td>
                             {% endif %}
                         </tr>
                     {% endfor %}
@@ -75,38 +56,20 @@
                             </th>
                         </tr>
                     </thead>
-                    <tr>
-                        <td>Data Structures</td>
-                        <td>Design and Analysis of Algorithms</td>
-                    </tr>
-                    <tr>
-                        <td>Data Structures Lab</td>
-                        <td>Design and Analysis of Algorithms Lab</td>
-                    </tr>
-                    <tr>
-                        <td>Operating Systems</td>
-                        <td>Software Engineering</td>
-                    </tr>
-                    <tr>
-                        <td>Operating Systems Lab</td>
-                        <td>Software Engineering Lab</td>
-                    </tr>
-                    <tr>
-                        <td>Computer Networks</td>
-                        <td>Database Management Systems</td>
-                    </tr>
-                    <tr>
-                        <td>Computer Networks Lab</td>
-                        <td>Database Management Systems Lab</td>
-                    </tr>
-                    <tr>
-                        <td>Skill Enhancement Course I</td>
-                        <td>Skill Enhancement Course II</td>
-                    </tr>
-                    <tr>
-                        <td>Generic Elective III</td>
-                        <td>Generic Elective IV</td>
-                    </tr>
+                    {% for data in second_year %}
+                        <tr>
+                            {% if data.0 is not None %}
+                                <td onclick="window.location.href='{% url "notes" data.0.subject data.0.id %}'">
+                                    {{ data.0.subject_code }}-{{ data.0.subject }}
+                                </td>
+                            {% endif %}
+                            {% if data.1 is not None  %}
+                                <td onclick="window.location.href='{% url "notes" data.1.subject data.1.id %}'">
+                                    {{ data.1.subject_code }}-{{ data.1.subject }}
+                                </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
                     <thead class="table-dark">
                         <tr>
                             <th>
@@ -121,42 +84,23 @@
                             </th>
                         </tr>
                     </thead>
-                    <tr>
-                        <td>Internet Technologies</td>
-                        <td>Artificial Intelligence</td>
-                    </tr>
-                    <tr>
-                        <td>Internet Technologies Lab</td>
-                        <td>Artificial Intelligence Lab</td>
-                    </tr>
-                    <tr>
-                        <td>Theory of Computation</td>
-                        <td>Computer Graphics</td>
-                    </tr>
-                    <tr>
-                        <td>Theory of Computation Tutorial</td>
-                        <td>Computer Graphics Lab</td>
-                    </tr>
-                    <tr>
-                        <td>Discipline Specific Elective I</td>
-                        <td>Discipline Specific Elective III</td>
-                    </tr>
-                    <tr>
-                        <td>Discipline Specific Elective I Lab</td>
-                        <td>Discipline Specific Elective III Lab</td>
-                    </tr>
-                    <tr>
-                        <td>Discipline Specific Elective II</td>
-                        <td>Discipline Specific Elective IV</td>
-                    </tr>
-                    <tr>
-                        <td>Discipline Specific Elective II Lab</td>
-                        <td>Discipline Specific Elective IV Lab</td>
-                    </tr>
+                    {% for data in third_year %}
+                        <tr>
+                            {% if data.0 is not None %}
+                                <td onclick="window.location.href='{% url "notes" data.0.subject data.0.id %}'">
+                                    {{ data.0.subject_code }}-{{ data.0.subject }}
+                                </td>
+                            {% endif %}
+                            {% if data.1 is not None  %}
+                                <td onclick="window.location.href='{% url "notes" data.1.subject data.1.id %}'">
+                                    {{ data.1.subject_code }}-{{ data.1.subject }}
+                                </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
     </section>
-    {% comment %} Footer {% endcomment %}
     {% include 'footer.html' %}
 {% endblock container %}

@@ -1,15 +1,16 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
-
-from django.contrib.auth.forms import AuthenticationForm
-from django.views.generic import View
-from django.http import HttpResponse
-from django.contrib import messages
-from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required, user_passes_test
-from .models import Subject
+
+# from django.contrib.auth.forms import AuthenticationForm
+# from django.views.generic import View
+# from django.http import HttpResponse
+# from django.contrib.auth.models import User
+from django.contrib import messages
+from .models import Subject, Note
 from django.db.models import Q
+from .contextProcessor import *
 
 # Create your views here.
 
@@ -54,20 +55,26 @@ def dashboard(request):
     return render(request, 'pages/admin_dashboard.html')
 
 
-def notes(request):
-    return render(request, 'pages/notes.html')
+def notes(request, id, *args, **kwargs):
+    data = Note.objects.filter(subject=id)
+    subject = Subject.objects.get(id=id)
+    context = {
+        "data": data,
+        "subject": subject,
+    }
+    return render(request, 'pages/notes.html', context)
 
 
 def notes_table(request):
-    first_year = Subject.objects.filter(Q(semister=1) | Q(semister=2))
-    second_year = Subject.objects.filter(Q(semister=3) | Q(semister=4))
-    third_year = Subject.objects.filter(Q(semister=5) | Q(semister=6))
+
+    first_year = pairSemester(1, 2)
+    second_year = pairSemester(3, 4)
+    third_year = pairSemester(5, 6)
     context = {
         'first_year': first_year,
         'second_year': second_year,
         'third_year': third_year,
     }
-    print(context)
     return render(request, "pages/notes_table.html", context)
 
 
