@@ -1,0 +1,8 @@
+backend/migrations/*
+frontend/migrations/*
+.vscode
+db.sqlite3
+backend/__pycache__/*
+media/*
+root/__init__.py
+root/__pycache__/*

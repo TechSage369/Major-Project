@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+
+.navbar {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('../image/Hero-Booksbackground.png');
+    color: #fff;
+}
+
+/* Body */
+
+.body-text {
+    text-align: center;
+    padding: 2rem;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.body-text:hover {
+    text-shadow: 1px 1px 1px #000;
+    cursor: pointer;
+}
+
+/* PDFS */
+
+.card {
+    background-color: #dddddd;
+    text-align: center;
+    margin: 1rem;
+}
+
+.card:hover {
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+}
+
+.videos {
+    height: 250px;
+    width: 450px;
+    /* padding: 1rem; */
+}

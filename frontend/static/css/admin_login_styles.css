@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #dddddd;
+}
+
+/* Navbar */
+
+.navbar {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('../image/Hero-Booksbackground.png');
+    color: #fff;
+}
+
+/* Login Form */
+
+.row {
+    background-color: skyblue;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px #000;
+}
+
+img {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+h1 {
+    font-weight: bold;
+    color: #000;
+}
+
+.login_btn {
+    border: none;
+    outline: none;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .img-section {
+        display: none;
+    }
+}

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    The CS Guide
+{% endblock title %}
+{% block container %}
+    <link rel="stylesheet" href="{% static 'css/landing_page_styles.css' %}">
+
+    <section class="CS-header">
+        {% include 'header.html' %}
+
+        {% comment %} Title {% endcomment %}
+        <section class="title">
+            <i class="fa-solid fa-graduation-cap fa-3x"></i>
+            <br>
+            <h1>Welcome to The CS Guide!</h1>
+            <h3>~Let us learn together.</h3>
+        </section>
+    </section>
+
+    <section class="album">
+        <div class="container-fluid cards-container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 cards">
+                    <div onclick="window.location.href='{% url "notes-table" %}'" class="card">
+                        <img src="{% static 'image/notes_img.png' %}"
+                             class="card-img-top card-image"
+                             alt="thumbnail">
+                        <div class="card-body">
+                            <h5 class="card-title">Notes</h5>
+                            <p class="card-text">Get access to all the hand-written notes here.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 cards">
+                    <div onclick="window.location.href='{% url "video-lectures-table" %}'"
+                         class="card">
+                        <img src="{% static 'image/videos_img.png' %}"
+                             class="card-img-top card-image"
+                             alt="thumbnail">
+                        <div class="card-body">
+                            <h5 class="card-title">Video Lectures</h5>
+                            <p class="card-text">Get access to all the course related videos here.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 cards">
+                    <div onclick="window.location.href='{% url "course-books-table" %}'"
+                         class="card">
+                        <img src="{% static 'image/books_img.png' %}"
+                             class="card-img-top card-image"
+                             alt="thumbnail">
+                        <div class="card-body">
+                            <h5 class="card-title">Course Books</h5>
+                            <p class="card-text">Get access to all the course related books here.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 cards">
+                    <div onclick="window.location.href='{% url 'sample-papers-table' %}'"
+                         class="card">
+                        <img src="{% static 'image/papers_img.png' %}"
+                             class="card-img-top card-image"
+                             alt="thumbnail">
+                        <div class="card-body">
+                            <h5 class="card-title">Sample Papers</h5>
+                            <p class="card-text">Get access to all the past question papers here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% comment %} Footer {% endcomment %}
+    {% include 'footer.html' %}
+{% endblock container %}

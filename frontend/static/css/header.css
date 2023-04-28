@@ -1,0 +1,44 @@
+/* Navbar */
+
+.navbar {
+    padding: 1.2rem 0;
+}
+
+.navbar-brand {
+    /* font-family: ; */
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 1rem;
+}
+
+.navbar-brand:hover {
+    text-shadow: 1px 1px 1px #fff;
+}
+
+.nav-item {
+    padding: 0 18px;
+    color: #fff;
+}
+
+.nav-item:hover {
+    text-decoration: underline #fff;
+}
+
+.login-btn {
+    margin: 0 0.5rem;
+}
+
+/* Menu */
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-items {
+    list-style: none;
+}
+
+.list-item {
+    margin: 1.5rem auto;
+}

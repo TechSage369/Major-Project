@@ -1,0 +1,94 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+
+{% comment %} Navbar {% endcomment %}
+
+<nav class="navbar navbar-expand-md navbar-dark">
+    <div class="container-fluid">
+        <button class="btn menu-btn"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#staticBackdrop"
+                aria-controls="staticBackdrop">
+            <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #ffffff;"></i>
+        </button>
+        <a class="navbar-brand mx-2" href="{% url 'index' %}">The CS Guide</a>
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">About Us</a>
+                </li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin-dashboard' %}">Dashboard</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="">Contact</a>
+                </li>
+            {% endif %}
+            </ul>
+            {% if request.user.is_authenticated %}
+            <a class="btn login-btn btn-outline-success" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a class="btn login-btn btn-outline-success" href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+{% comment %} Menu {% endcomment %}
+
+<div class="offcanvas offcanvas-start bg-dark"
+     data-bs-scroll="false"
+     data-bs-backdrop="false"
+     tabindex="-1"
+     id="staticBackdrop"
+     aria-labelledby="staticBackdropLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-light" id="staticBackdropLabel">Menu</h5>
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            <div class="menu">
+                <ul class="menu-items">
+                    <li>
+                        <button type="button" class="btn list-item btn-outline-light">Download Syllabus</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn list-item btn-outline-light">Online Library</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn list-item btn-outline-light">Entrance Exams</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn list-item btn-outline-light">Scholarships</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn list-item btn-outline-light">Software Courses</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn list-item btn-outline-light">Tech News</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% include "alert.html" %}

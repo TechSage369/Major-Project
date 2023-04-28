@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.CS-header {
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('../image/Hero-Booksbackground.png');
+    color: #fff;
+    background-size: contain;
+}
+
+.title {
+    text-align: center;
+    padding: 2.5rem;
+}
+
+/* Album */
+
+.cards {
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+.card {
+    text-align: center;
+    background-color: #dddddd;
+    /* color: #fff; */
+    border-style: none;
+}
+
+.card:hover {
+    border: solid 1px white;
+    cursor: pointer;
+    opacity: 0.9;
+    background-color: #000;
+    color: #fff;
+}
