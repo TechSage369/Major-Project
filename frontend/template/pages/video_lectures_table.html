@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-    Notes
+    {{title}}
 {% endblock title %}
 {% block container %}
     <link rel="stylesheet" href="{% static 'css/subjects_table_styles.css' %}">
@@ -59,12 +59,12 @@
                     {% for data in second_year %}
                         <tr>
                             {% if data.0 is not None %}
-                                <td onclick="window.location.href='{% url "notes" data.0.subject data.0.id %}'">
+                                <td onclick="window.location.href='{% url "video-lectures" data.0.subject data.0.id %}'">
                                     {{ data.0.subject_code }}-{{ data.0.subject }}
                                 </td>
                             {% endif %}
                             {% if data.1 is not None  %}
-                                <td onclick="window.location.href='{% url "notes" data.1.subject data.1.id %}'">
+                                <td onclick="window.location.href='{% url "video-lectures" data.1.subject data.1.id %}'">
                                     {{ data.1.subject_code }}-{{ data.1.subject }}
                                 </td>
                             {% endif %}
@@ -87,12 +87,12 @@
                     {% for data in third_year %}
                         <tr>
                             {% if data.0 is not None %}
-                                <td onclick="window.location.href='{% url "notes" data.0.subject data.0.id %}'">
+                                <td onclick="window.location.href='{% url "video-lectures" data.0.subject data.0.id %}'">
                                     {{ data.0.subject_code }}-{{ data.0.subject }}
                                 </td>
                             {% endif %}
                             {% if data.1 is not None  %}
-                                <td onclick="window.location.href='{% url "notes" data.1.subject data.1.id %}'">
+                                <td onclick="window.location.href='{% url "video-lectures" data.1.subject data.1.id %}'">
                                     {{ data.1.subject_code }}-{{ data.1.subject }}
                                 </td>
                             {% endif %}

@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 # from django.http import HttpResponse
 # from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import Subject, Note, Video_Lecture
+from .models import Subject, Note, Video_Lecture, Book
 from django.db.models import Q
 from .contextProcessor import *
 
@@ -55,6 +55,13 @@ def dashboard(request):
     return render(request, 'pages/admin_dashboard.html')
 
 
+def notes_table(request):
+    title = "Notes"
+    context = getSubjectTableData()
+    context['title'] = title
+    return render(request, "pages/notes_table.html", context)
+
+
 def notes(request, id, *args, **kwargs):
     data = Note.objects.filter(subject=id)
     subject = Subject.objects.get(id=id)
@@ -65,13 +72,10 @@ def notes(request, id, *args, **kwargs):
     return render(request, 'pages/notes.html', context)
 
 
-def notes_table(request):
-    context = getSubjectTableData()
-    return render(request, "pages/notes_table.html", context)
-
-
 def video_lectures_table(request):
+    title = "Video Lectures"
     context = getSubjectTableData()
+    context['title'] = title
     return render(request, "pages/video_lectures_table.html", context)
 
 
@@ -82,15 +86,20 @@ def video_lectures(request, id, *args, **kwargs):
 
 
 def course_books_table(request):
-    return render(request, "pages/course_books_table.html")
+    title = "Course Book"
+    context = getSubjectTableData()
+    context['title'] = (title)
+    return render(request, "pages/course_books_table.html", context)
 
 
-def course_books(request):
-    return render(request, "pages/course_books.html")
+def course_books(request, id, *args, **kwargs):
+    data = Book.objects.filter(subject=id)
+    subject = Subject.objects.get(id=id)
+    return render(request, "pages/course_books.html", context={'data': data, 'subject': subject})
 
 
 def sample_papers_table(request):
-    return render(request, "pages/sample_papers_table.html")
+    return render(request, "pages/sample_papers_table.html",)
 
 
 def sample_papers(request):
