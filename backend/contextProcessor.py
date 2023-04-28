@@ -24,3 +24,16 @@ def pairSemester(a: int, b: int) -> List[List]:
         data.append(temp)
 
     return data
+
+
+def getSubjectTableData():
+    first_year = pairSemester(1, 2)
+    second_year = pairSemester(3, 4)
+    third_year = pairSemester(5, 6)
+    context = {
+        'first_year': first_year,
+        'second_year': second_year,
+        'third_year': third_year,
+    }
+
+    return context

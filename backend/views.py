@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 # from django.http import HttpResponse
 # from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import Subject, Note
+from .models import Subject, Note, Video_Lecture
 from django.db.models import Q
 from .contextProcessor import *
 
@@ -66,24 +66,19 @@ def notes(request, id, *args, **kwargs):
 
 
 def notes_table(request):
-
-    first_year = pairSemester(1, 2)
-    second_year = pairSemester(3, 4)
-    third_year = pairSemester(5, 6)
-    context = {
-        'first_year': first_year,
-        'second_year': second_year,
-        'third_year': third_year,
-    }
+    context = getSubjectTableData()
     return render(request, "pages/notes_table.html", context)
 
 
 def video_lectures_table(request):
-    return render(request, "pages/video_lectures_table.html")
+    context = getSubjectTableData()
+    return render(request, "pages/video_lectures_table.html", context)
 
 
-def video_lectures(request):
-    return render(request, "pages/video_lectures.html")
+def video_lectures(request, id, *args, **kwargs):
+    data = Video_Lecture.objects.filter(subject=id)
+    subject = Subject.objects.get(id=id)
+    return render(request, "pages/video_lectures.html", context={'data': data, 'subject': subject})
 
 
 def course_books_table(request):

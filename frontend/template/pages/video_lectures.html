@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-    C-Programming Notes
+    {{ subject.subject }}
 {% endblock title %}
 {% block container %}
     <link rel="stylesheet" href="{% static 'css/C-Programming_Notes.css' %}">
@@ -10,20 +10,22 @@
     </section>
     {% comment %} Body {% endcomment %}
     <section class="body">
-        <h2 class="body-text">CC12 - Programming Fundamentals using C~</h2>
+        <h2 class="body-text">{{ subject.subject_code }}-{{ subject.subject }}</h2>
         <div class="container-fluid videos-container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="video">
-                        <iframe class="videos"
-                                src="https://www.youtube.com/embed/videoseries?list=PLu0W_9lII9aiXlHcLx-mDH1Qul38wD3aR"
-                                title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen>
-                        </iframe>
+                {% for x in data %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="video">
+                            <iframe class="videos"
+                                    src="{{ x.link }}"
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
-                </div>
+                {% endfor %}
                 <div class="col-lg-4 col-md-6">
                     <div class="video">
                         <iframe class="videos"

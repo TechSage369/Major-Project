@@ -30,7 +30,7 @@ class Note(models.Model):
     notes_file = models.FileField(
         upload_to="Notes/")
     created = models.DateField(auto_now_add=True, editable=False)
-    contributer = models.CharField(max_length=300)
+    contributer = models.CharField(max_length=300, null=True, blank=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
 
@@ -43,7 +43,7 @@ class Video_Lecture(models.Model):
         Subject, on_delete=models.SET_NULL, null=True, blank=True)
     link = models.CharField(max_length=1000)
     created = models.DateField(auto_now_add=True, editable=False)
-    contributer = models.CharField(max_length=300)
+    contributer = models.CharField(max_length=300, null=True, blank=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
 
