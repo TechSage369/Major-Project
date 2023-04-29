@@ -17,7 +17,6 @@ def pairSemester(a: int, b: int) -> List[List]:
             except:
                 temp.append(x[i])
                 temp.append(None)
-            pass
         except:
             temp.append(None)
             temp.append(y[i])
