@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #dddddd;
+    background-color: #fff;
 }
 
 /* Navbar */
@@ -17,9 +17,9 @@ body {
 /* Login Form */
 
 .row {
-    background-color: skyblue;
+    background-color: #b8d1d7;
     border-radius: 30px;
-    box-shadow: 10px 10px 10px #000;
+    box-shadow: 6px 6px 18px #000;
 }
 
 img {
