@@ -35,7 +35,7 @@ def loginUser(request):
             login(request, user)
             messages.success(request, 'Successfully logged in',
                              extra_tags="success")
-            return redirect('admin-dashboard')
+            return redirect('/admin/')
         else:
             messages.error(
                 request, 'invalid username or password!', extra_tags='warning')
