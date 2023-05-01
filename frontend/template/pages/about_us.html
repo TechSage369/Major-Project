@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+About Us
+{% endblock title %}
+{% block container %}
+<link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+<section class="CS-header">
+  {% include 'header.html' %}
+</section>
+<div class="heading">
+  <h1>About Us</h1>
+  <p>This website is designed by two students of Computer Science and Application Department of St. Joseph's College.
+    This is our major project which we developed in 2023.
+    This website aims to provide you with all the necessary information for Computer Science students of CSA
+    Department from Semester 1 till semeseter 6.
+    It not only provides you the notes but also the sample questions, video lectures and books.
+    The CS Guide is a website designed to provide all the study materials for Computer Sciene students in one place.
+    This website makes it extremely easy for the students to access various study materials just with a few simple
+    clicks.
+  </p>
+</div>
+<div class="container">
+  <section class="about">
+    <div class="about-image">
+      <img src="{% static 'image/Hero-Booksbackground.png' %}">
+    </div>
+    <div class="about-content">
+      <h2 style="text-align:center">Our Team</h2>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h2>Muhammad Kaif</h2>
+              <p class="title">Website developer</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h2>Shreya Sharma</h2>
+              <p class="title">Website Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% comment %} Footer {% endcomment %}
+{% include 'footer.html' %}
+{% endblock container %}

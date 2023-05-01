@@ -9,8 +9,8 @@
 
 .navbar {
     padding: 1.2rem 0;
-    /* background-color: #000; */
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('../images/Hero-Booksbackground.png');
+    background-color: #000;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('../images/Hero-Booksbackground.png'); */
 }
 
 .navbar-brand {

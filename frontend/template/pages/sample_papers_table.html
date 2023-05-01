@@ -34,11 +34,15 @@
                                 <td onclick="window.location.href='{% url "sample-papers" data.0.subject data.0.id %}'">
                                     {{ data.0.subject_code }}-{{ data.0.subject }}
                                 </td>
+                            {% else %}
+                                <td></td>
                             {% endif %}
                             {% if data.1 is not None  %}
                                 <td onclick="window.location.href='{% url "sample-papers" data.1.subject data.1.id %}'">
                                     {{ data.1.subject_code }}-{{ data.1.subject }}
                                 </td>
+                            {% else %}
+                                <td></td>
                             {% endif %}
                         </tr>
                     {% endfor %}
@@ -62,11 +66,15 @@
                                 <td onclick="window.location.href='{% url "sample-papers" data.0.subject data.0.id %}'">
                                     {{ data.0.subject_code }}-{{ data.0.subject }}
                                 </td>
+                            {% else %}
+                                <td></td>
                             {% endif %}
                             {% if data.1 is not None  %}
                                 <td onclick="window.location.href='{% url "sample-papers" data.1.subject data.1.id %}'">
                                     {{ data.1.subject_code }}-{{ data.1.subject }}
                                 </td>
+                            {% else %}
+                                <td></td>
                             {% endif %}
                         </tr>
                     {% endfor %}
@@ -90,11 +98,15 @@
                                 <td onclick="window.location.href='{% url "sample-papers" data.0.subject data.0.id %}'">
                                     {{ data.0.subject_code }}-{{ data.0.subject }}
                                 </td>
+                            {% else %}
+                                <td></td>
                             {% endif %}
                             {% if data.1 is not None  %}
                                 <td onclick="window.location.href='{% url "sample-papers" data.1.subject data.1.id %}'">
                                     {{ data.1.subject_code }}-{{ data.1.subject }}
                                 </td>
+                            {% else %}
+                                <td></td>
                             {% endif %}
                         </tr>
                     {% endfor %}
