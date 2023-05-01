@@ -1,32 +1,17 @@
-Sure, here's the updated README.md file with the link to the pipenv installation instructions:
-
-  
 
 # CS Guide Project
-
-  
-
 This is a major project for our college that aims to provide a guide for computer science students. The project requires Python 3, pip, and pipenv to be installed on your computer.
 
   
-
 ## Installation
-
-  
-
 To get started with the project, clone or fork the repository and then run the following command to install all dependencies:
 
-  
-
 ```
-
 pipenv install
-
 ```
-
-  or
-  ```
-  py -m pipenv install
+or
+```
+py -m pipenv install
 ```
 
 If you don't have pipenv installed, you can follow the installation instructions [click here](https://pypi.org/project/pipenv/).
