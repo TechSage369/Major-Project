@@ -11,16 +11,19 @@ def pairSemester(a: int, b: int) -> List[List]:
         temp = []
         try:
             try:
+                temp.clear()
                 temp.append(x[i])
                 temp.append(y[i])
             except:
+                temp.clear()
                 temp.append(x[i])
                 temp.append(None)
         except:
+            temp.clear()
             temp.append(None)
             temp.append(y[i])
         data.append(temp)
-
+        print(temp)
     return data
 
 
