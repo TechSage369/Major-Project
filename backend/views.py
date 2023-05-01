@@ -18,6 +18,11 @@ from .contextProcessor import *
 def index(request):
     return render(request, 'pages/landing-page/landingpage.html')
 
+def aboutUs(request):
+    return render(request, 'pages/about_us.html')
+
+def contact(request):
+    return render(request, 'pages/contact_us.html')
 
 def isLoggedIn(user):
     return not user.is_authenticated

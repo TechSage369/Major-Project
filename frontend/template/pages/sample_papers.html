@@ -1,30 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-    {{ subject.subject }}
+{{ subject.subject }}
 {% endblock title %}
 {% block container %}
-    <link rel="stylesheet" href="{% static 'css/C-Programming_Notes.css' %}">
-    <section class="CS-header">
-        {% include 'header.html' %}
-    </section>
-    <section class="files">
-        <div class="container-fluid files-container">
-            <h2 class="body-text">{{ subject.subject_code }}-{{ subject.subject }}</h2>
-            <div class="row">
-                {% for x in data %}
-                    <div class="col-lg-2 col-md-3 col-sm-4 file">
-                        <div class="card" onclick="window.location.href='{{ x.paper_file.url }}'">
-                            <img src="{% static 'image/paper.png' %}"
-                                 class="card-img-top card-image"
-                                 alt="pdf">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ x.title }}</h5>
-                            </div>
-                        </div>
+<link rel="stylesheet" href="{% static 'css/C-Programming_Notes.css' %}">
+<section class="CS-header">
+    {% include 'header.html' %}
+</section>
+<section class="files">
+    <div class="container-fluid files-container">
+        <h2 class="body-text">{{ subject.subject_code }}-{{ subject.subject }}</h2>
+        <div class="row">
+            {% for x in data %}
+            <div class="col-lg-2 col-md-3 col-sm-4 file">
+                <div class="card" onclick="window.location.href='{{ x.paper_file.url }}'">
+                    <img src="{% static 'image/paper.png' %}" class="card-img-top card-image" alt="pdf">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ x.title }}</h5>
                     </div>
-                {% endfor %}
+                </div>
             </div>
-            {% comment %} Footer {% endcomment %}
-            {% include 'footer.html' %}
-        {% endblock container %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% comment %} Footer {% endcomment %}
+{% include 'footer.html' %}
+{% endblock container %}
