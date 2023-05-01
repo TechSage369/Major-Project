@@ -1,5 +1,4 @@
 from .models import Subject
-from itertools import zip_longest
 from typing import List
 
 
