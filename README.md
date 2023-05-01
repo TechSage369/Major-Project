@@ -1,6 +1,6 @@
 
 # CS Guide Project
-This is a major project for our college that aims to provide a guide for computer science students. The project requires Python 3, pip, and pipenv to be installed on your computer.
+This is a major project for our college that aims to provide a guide for computer science students. The project requires `Python 3`, `pip`, and `pipenv` to be installed on your computer.
 
   
 ## Installation
