@@ -27,7 +27,7 @@ class CommonAdmin(admin.ModelAdmin):
 
     @admin.display(ordering='subject__subject', description="Subject")
     def get_subject(self, obj):
-        return truncatechars(obj.subject.subject, 30)
+        return truncatechars(obj.subject.subject, 10)
 
     @admin.display(ordering='subject__subject_code', description="Code")
     def get_subject_code(self, obj):
